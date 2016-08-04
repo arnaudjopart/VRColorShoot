@@ -34,13 +34,13 @@ public class Enemy : MonoBehaviour {
         gameObject.SetActive( true );
         m_transform.position = positionOfSpawn;
         m_rb.AddForce( Vector3.up * m_forceAtLaunch, ForceMode.Impulse );
-        Quaternion rotation = Quaternion.LookRotation(Vector3.zero);
-        m_transform.rotation = rotation;
+        //Quaternion rotation = Quaternion.LookRotation(Vector3.zero);
+        //m_transform.rotation = rotation;
     }
 
     private void HandleClick()
     {
-        print( "die" );
+        print( "Die" );
         Destroy( gameObject );
     }
 

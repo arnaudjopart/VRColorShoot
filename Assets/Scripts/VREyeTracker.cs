@@ -40,11 +40,6 @@ public class VREyeTracker : MonoBehaviour {
             }
             m_lastInteractive = interactive;
             m_currentInteractive = interactive;
-
-            if( m_currentInteractive.GetComponent<Enemy>() )
-            {
-                print( "ennemy" );// m_cursor.GetComponent<MeshRenderer>().material = m_hightligthMaterial;
-            }
         }
         else
         {
@@ -63,6 +58,7 @@ public class VREyeTracker : MonoBehaviour {
     {
         if( m_currentInteractive != null )
         {
+            print( m_currentInteractive.name );
             m_currentInteractive.OnClick();
         }
 
