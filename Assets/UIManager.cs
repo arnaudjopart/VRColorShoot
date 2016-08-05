@@ -22,8 +22,8 @@ public class UIManager : MonoBehaviour {
             case GameManager.STATE.START:
                 break;
             case GameManager.STATE.PLAYING:
-                m_timerText.text = "Timer: "+GameManager.playTime.ToString();
-                m_scoreTExt.text = "score: " + GameManager.score.ToString();
+                m_timerText.text = "<color=red>T</color>imer: "+GameManager.playTime.ToString();
+                m_scoreTExt.text = "<color=red>S</color>core: " + GameManager.score.ToString();
                 break;
             case GameManager.STATE.GAME:
                 

@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour {
     public static float playTime = 60;
     public static float score;
     public UIManager uiManager;
+    public VRInput vrInput;
+
+    public enum COLORCODE { RED,BLUE,YELLOW};
+
+    public static COLORCODE currentColor;
 
     public static STATE currentState;
 
@@ -59,6 +64,10 @@ public class GameManager : MonoBehaviour {
     {
         playTime = 60;
         score = 0; 
+    }
+    public void SetShootColor(string color)
+    {
+
     }
     #region Privates Variables
     private float timer;
