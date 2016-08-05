@@ -5,7 +5,8 @@ public class GameManager : MonoBehaviour {
 
     #region Public and protected Methods
     public enum STATE { START, PLAYING, GAME, PAUSE, END };
-    public static float playTime = 5;
+    public static float playTime;
+    public float m_startPlayTime = 60;
     public static float score;
     public UIManager m_uiIngameManager;
     public UIMainManager m_uiMainManager;
@@ -66,7 +67,7 @@ public class GameManager : MonoBehaviour {
 
     static void ResetStaticGameVariables()
     {
-        playTime = 5;
+        playTime = instance.m_startPlayTime;
         score = 0; 
     }
     public void SetShootColor(string color)
