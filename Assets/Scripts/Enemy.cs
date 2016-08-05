@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour {
     public Material[] m_listOfColors;
     public MeshRenderer m_meshRenderer;
     public TargetUI m_targetUI;
+    public AudioClip m_explosionSound;
 
     static int nbOfLaunch;
 
@@ -24,6 +25,7 @@ public class Enemy : MonoBehaviour {
     void Awake()
     {
         m_rb = GetComponent<Rigidbody>();
+        m_audioSource = GetComponent<AudioSource>();
         
         m_transform = GetComponent<Transform>();
         gameObject.SetActive( false );
@@ -81,8 +83,21 @@ public class Enemy : MonoBehaviour {
 
     private void HandleClick()
     {
+        
+        if(color == GameManager.currentColor )
+        {
+            GameManager.score += 20;
+            AudioSource.PlayClipAtPoint( m_explosionSound, m_transform.position );
+            GameObject explosion = Instantiate(m_explosion,m_transform.position,Quaternion.identity) as GameObject;
+        }
+        if(color == GameManager.COLORCODE.YELLOW )
+        {
+            GameManager.score += 10;
+            GameManager.playTime += 1;
+        }
+        
         //if(m_currentColorGameManager.score++;
-        GameObject explosion = Instantiate(m_explosion,m_transform.position,Quaternion.identity) as GameObject;
+        
         Reset();
     }
 
@@ -103,6 +118,7 @@ public class Enemy : MonoBehaviour {
     private Rigidbody m_rb;
     private Transform m_transform;
     private Renderer m_renderer;
+    private AudioSource m_audioSource;
 
     #endregion
 

@@ -14,6 +14,7 @@ public class VRButtonBehavior : MonoBehaviour {
     public Color m_EndFillcolor;
     public Color m_startFillColor;
     public bool m_isCompleted;
+
     public static bool m_isValidate;
     public float m_speedOfFill;
     public float m_speedOfEmpty;
@@ -27,7 +28,7 @@ public class VRButtonBehavior : MonoBehaviour {
         Vector2 sizeDelta = m_fillRec.sizeDelta;
         float width = sizeDelta.x;
 
-        if( m_isGazeOn && !m_isCompleted)
+        if( m_isGazeOn && !m_isCompleted && !m_isValidate)
         {          
             width += m_speedOfFill;
             
@@ -51,6 +52,13 @@ public class VRButtonBehavior : MonoBehaviour {
         m_fillRec.sizeDelta = sizeDelta;
     }
 
+    public void Reset()
+    {
+        print( "reset" );
+        m_fillRec.sizeDelta = new Vector2( 0, 15 );
+        m_isValidate = false;
+        m_isCompleted = false;
+    }
     void OnEnable()
     {
         m_interactive.OnOverEvent += HandleOver;
@@ -80,6 +88,6 @@ public class VRButtonBehavior : MonoBehaviour {
 
     
     private float m_currentFill;
-    private RectTransform m_fillRectTransform;
+    
     public bool m_isGazeOn;
 }

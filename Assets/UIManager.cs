@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        
+        m_anim = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
@@ -22,8 +22,8 @@ public class UIManager : MonoBehaviour {
             case GameManager.STATE.START:
                 break;
             case GameManager.STATE.PLAYING:
-                m_timerText.text = "<color=red>T</color>imer: "+GameManager.playTime.ToString();
-                m_scoreTExt.text = "<color=red>S</color>core: " + GameManager.score.ToString();
+                m_timerText.text = "<color=red>T</color>imer: "+GameManager.playTime.ToString()+" seconds";
+                m_scoreTExt.text = "<color=red>S</color>core: "+ GameManager.score.ToString()+" points";
                 break;
             case GameManager.STATE.GAME:
                 
@@ -38,4 +38,11 @@ public class UIManager : MonoBehaviour {
 
         
 	}
+    public void Reset()
+    {
+        m_anim.SetTrigger( "MoveOutTrigger" );
+    }
+
+    private Animator m_anim;
+
 }

@@ -28,15 +28,14 @@ public class VRInput : MonoBehaviour {
 
                     OnClick();
                 }
-                if( Input.GetAxis( "Mouse X" ) > .5f )
+                if( Input.GetAxis( "Mouse X" ) > .9f )
                 {
                     GameManager.currentColor = GameManager.COLORCODE.BLUE;
                 }
-                if( Input.GetAxis( "Mouse X" ) < -.5f )
+                if( Input.GetAxis( "Mouse X" ) < -.9f )
                 {
                     GameManager.currentColor = GameManager.COLORCODE.RED;
                 }
-
 
                 break;
             case GameManager.STATE.GAME:

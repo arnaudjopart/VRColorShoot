@@ -59,6 +59,7 @@ public class VREyeTracker : MonoBehaviour {
             case GameManager.STATE.PAUSE:
                 break;
             case GameManager.STATE.END:
+                m_cursorMeshRender.material = m_listOfCursorMaterials[ 2 ];
                 break;
             default:
                 break;

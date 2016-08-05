@@ -5,7 +5,7 @@ public class ObjectSpawner : MonoBehaviour {
 
     public Enemy[] m_listOfEnemiesPrefab;
     public float spawnFrequencyInSecond;
-
+    public AudioClip m_spawnClip;
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +24,7 @@ public class ObjectSpawner : MonoBehaviour {
                 {                    
                     Enemy enemyTypeToSpawn = m_listOfEnemiesPrefab[0];
                     Enemy enemy = SpawnAvailableInstance(enemyTypeToSpawn);
-                    Vector3 spawnPosition = new Vector3(Random.Range(-5,5),-1,Random.Range(5,7));
+                    Vector3 spawnPosition = new Vector3(Random.Range(-5,5),-1,Random.Range(5,15));
                     enemy.LaunchAt( spawnPosition );
                 }    
                 break;

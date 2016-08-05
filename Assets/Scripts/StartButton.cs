@@ -30,7 +30,6 @@ public class StartButton : VRButtonBehavior {
             GameManager.LaunchGame();
             m_canvasAnim.SetTrigger( "moveOutMenuTrigger" );
             m_uiIngameCanvas.SetTrigger( "MoveInTrigger" );
-
         }
     }
     public override void HandleOut()
