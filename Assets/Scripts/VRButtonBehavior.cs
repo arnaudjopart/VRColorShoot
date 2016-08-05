@@ -3,6 +3,8 @@ using System.Collections;
 using System;
 using UnityEngine.UI;
 
+[RequireComponent( typeof( AudioSource ) )]
+
 public class VRButtonBehavior : MonoBehaviour {
 
     public VRInteractiveElement m_interactive;
@@ -18,10 +20,13 @@ public class VRButtonBehavior : MonoBehaviour {
     public static bool m_isValidate;
     public float m_speedOfFill;
     public float m_speedOfEmpty;
+
+    public AudioClip m_validateSound;
     
+
     public virtual void Start()
     {
-        
+        m_audiSource = GetComponent<AudioSource>();        
     }
     public virtual void Update()
     {
@@ -83,11 +88,14 @@ public class VRButtonBehavior : MonoBehaviour {
     public virtual void HandleValidation()
     {
         m_isValidate = true;
+        m_audiSource.clip = m_validateSound;
+        m_audiSource.Play();
         //Debug.Log( "Validate " + m_interactive.name );
     }
 
     
     private float m_currentFill;
+    private AudioSource m_audiSource;
     
     public bool m_isGazeOn;
 }
