@@ -19,11 +19,9 @@ public class ObjectSpawner : MonoBehaviour {
         switch( GameManager.currentState )
         {
             case GameManager.STATE.PLAYING:
-                spawnFrequencyPerSecond = 1 / spawnFrequencyInSecond;
-                Debug.Log( "Go" );
+                spawnFrequencyPerSecond = 1 / spawnFrequencyInSecond;                
                 if( Random.value < spawnFrequencyPerSecond * Time.deltaTime )
-                {
-                    
+                {                    
                     Enemy enemyTypeToSpawn = m_listOfEnemiesPrefab[0];
                     Enemy enemy = SpawnAvailableInstance(enemyTypeToSpawn);
                     Vector3 spawnPosition = new Vector3(Random.Range(-5,5),-1,5);

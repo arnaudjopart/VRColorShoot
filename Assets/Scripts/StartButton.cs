@@ -5,7 +5,7 @@ public class StartButton : VRButtonBehavior {
 
     [Header ("Variables")]
     public GameObject m_canvas;
-
+    public Animator m_uiIngameCanvas;
 
 	// Use this for initialization
 	public override void Start () {
@@ -27,9 +27,10 @@ public class StartButton : VRButtonBehavior {
         if( m_isCompleted && !m_isValidate )
         {
             base.HandleValidation();
-            GameManager.currentState = GameManager.STATE.PLAYING;
+            GameManager.LaunchGame();
             m_canvasAnim.SetTrigger( "moveOutMenuTrigger" );
-            
+            m_uiIngameCanvas.SetTrigger( "MoveInTrigger" );
+
         }
     }
     public override void HandleOut()

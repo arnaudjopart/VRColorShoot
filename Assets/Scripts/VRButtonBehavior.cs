@@ -15,8 +15,8 @@ public class VRButtonBehavior : MonoBehaviour {
     public Color m_startFillColor;
     public bool m_isCompleted;
     public static bool m_isValidate;
-    public float m_speedOfFill=.15f;
-    public float m_speedOfEmpty=0.05f;
+    public float m_speedOfFill;
+    public float m_speedOfEmpty;
     
     public virtual void Start()
     {

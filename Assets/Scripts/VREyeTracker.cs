@@ -80,6 +80,7 @@ public class VREyeTracker : MonoBehaviour {
         m_lastInteractive = null;
     }
     #endregion
+
     private RaycastHit m_hit;
     private VRInteractiveElement m_currentInteractive;
     private VRInteractiveElement m_lastInteractive;
